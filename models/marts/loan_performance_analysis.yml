@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: loan_performance_analysis
+    description: 'Monitor loan repayment behavior, delinquency trends, and portfolio risk to optimize recovery strategies and improve financial performance.'
+    columns:
+      - name: LOANID
+        description: 'Unique identifier for each loan.'
+        tests:
+          - not_null
+          - unique
+      - name: total_outstanding_loan_amount
+        description: 'The total outstanding amount across all loans.'
+        tests:
+          - not_null
+      - name: monthly_delinquent_loans
+        description: 'The number of loans delinquent in the current month.'
+        tests:
+          - not_null
+      - name: total_principal_paid
+        description: 'Total principal amount paid.'
+        tests:
+          - not_null
+      - name: total_interest_paid
+        description: 'Total interest amount paid.'
+        tests:
+          - not_null
+      - name: average_recovery_rate
+        description: 'Average recovery rate, calculated as outstanding amount over principal amount.'
+        tests:
+          - not_null
